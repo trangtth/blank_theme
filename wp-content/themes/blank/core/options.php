@@ -72,7 +72,11 @@ if ( ! class_exists( 'Blank_Theme_Options' ) ) {
 						'id' => 'logo-image',
 						'type' => 'media',
 						'title' => __('Logo Image', 'acv'),
-						'desc' => __('Image that you want to use as logo.', 'acv')
+						'desc' => __('Image that you want to use as logo.', 'acv'),
+						'url' => true,
+						'default' => array(
+							'url' => 'http://atmarkcafe.org/wp-content/themes/acv/images/logo.png'
+						)
 					),
 				)
 			);
