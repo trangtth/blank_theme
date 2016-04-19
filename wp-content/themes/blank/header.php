@@ -4,8 +4,7 @@
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<link rel="profile" href="http://gmgp.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<?php wp_head(); ?>
 </head>
@@ -13,24 +12,15 @@
 <!--Menu of mobile and tablet-->
 <nav class="main-canvas">
 	<div class="content-menu">
-		<?php blank_logo(); ?>
-		<?php blank_menu( 'primary-menu' ); ?>
-
 		<!--Logo-->
 		<div class="logo-brand">
-			<a href="#">
-				<img src="http://atmarkcafe.org/wp-content/themes/acv/images/logo.png" class="img-responsive" alt="">
-			</a>
+            <?php blank_logo(); ?>
 		</div>
 		<!--End Logo-->
 
 		<!--Menus-->
 		<div class="top-nav">
-			<ul id="menu-about" class="list-top">
-				<li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-231"><a href="/">HOME</a></li>
-				<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="#">ABOUT</a></li>
-				<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="#">CONTACT</a></li>
-			</ul>
+			<?php blank_menu( 'primary-menu' ); ?>
 		</div>
 		<!--End Menus-->
 	</div>
@@ -43,25 +33,19 @@
 
 		<!--Button toggle-->
 		<div class="toggleNav main-animation">
-			<img class="icon-toggle-nav main-animation" src="images/toggle_nav.png" class="img-responsive" alt="">
+			<img class="icon-toggle-nav main-animation" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/layout/toggle_nav.png" class="img-responsive" alt="">
 		</div>
 		<!--End button toggle-->
 
 		<!--Logo-->
 		<div class="logo-brand main-animation">
-			<a href="#">
-				<img src="http://atmarkcafe.org/wp-content/themes/acv/images/logo.png" class="img-responsive" alt="">
-			</a>
+			<?php blank_logo(); ?>
 		</div>
 		<!--End Logo-->
 
 		<!--Menus-->
 		<div class="top-nav main-animation">
-			<ul id="menu-about-1" class="list-top">
-				<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-231"><a href="/">HOME</a></li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="#">ABOUT</a></li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="#">CONTACT</a></li>
-			</ul>
+			<?php blank_menu( 'primary-menu' ); ?>
 		</div>
 		<!--End Menus-->
 	</div>
