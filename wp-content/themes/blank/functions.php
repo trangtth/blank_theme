@@ -96,8 +96,8 @@ if ( ! function_exists( 'blank_logo' ) ) {
 }
 
 /**
-@ Thiết lập hàm hiển thị logo
-@ blank_logo()
+@ Thiết lập hàm hiển thị footer text
+@ blank_footer_text()
  **/
 if ( ! function_exists( 'blank_footer_text' ) ) {
 	function blank_footer_text() {?>
