@@ -189,7 +189,7 @@ function create_shortcode_slider ( $post_type, $post_status = 'publish' ) {?>
 						$query->the_post ();
 				?>
 
-					<div class="item <?php if ($query->current_post == 0) {echo 'active'; } ?>">
+					<div class="item <?php if ($query->current_post == 0) { echo 'active';} ?>">
 						<?php
 						the_post_thumbnail('', array('class' => 'img-slider'));
 						?>
