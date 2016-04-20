@@ -5,6 +5,11 @@
 		</div>
 	</footer>
 	<!--End Footer-->
+
+	<!--To top-->
+	<div class="totop">
+	</div>
+
 	</div>
 	<?php wp_footer(); ?>
 </body>
