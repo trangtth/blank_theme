@@ -137,24 +137,83 @@ function blank_styles() {
 	 */
 
 	/* CSS */
-	wp_register_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', 'all' );
+	wp_register_style( 'bootstrap-style', get_template_directory_uri() . '/css/common/bootstrap.min.css', 'all' );
 	wp_enqueue_style( 'bootstrap-style' );
+
+    wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/common/bootstrap.min.css', 'all' );
+    wp_enqueue_style( 'font-awesome' );
 
 	wp_register_style( 'main-style', get_template_directory_uri() . '/css/layout.css', 'all' );
 	wp_enqueue_style( 'main-style' );
 
-	wp_register_style( 'animate-style', get_template_directory_uri() . '/css/animate.css', 'all' );
+	wp_register_style( 'slider-basic-style', get_template_directory_uri() . '/css/slide-basic.css', 'all' );
+	wp_enqueue_style( 'slider-basic-style' );
+
+	wp_register_style( 'animate-style', get_template_directory_uri() . '/css/common/animate.css', 'all' );
 	wp_enqueue_style( 'animate-style' );
 
 	/* JS */
-	wp_register_script( 'jquery-js', get_template_directory_uri() . '/js/layout/jquery-1.12.3.min.js', 'all' );
+	wp_register_script( 'jquery-js', get_template_directory_uri() . '/js/common/jquery-1.12.3.min.js', 'all' );
 	wp_enqueue_script( 'jquery-js' );
 
-	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/js/layout/bootstrap.min.js', 'all' );
+	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/js/common/bootstrap.min.js', 'all' );
 	wp_enqueue_script( 'bootstrap-js' );
 
 	wp_register_script( 'toggle-nav-js', get_template_directory_uri() . '/js/layout/script.js', 'all' );
 	wp_enqueue_script( 'toggle-nav-js' );
+
+	wp_register_script( 'slider-basic-js', get_template_directory_uri() . '/js/slider-basic/script.js', 'all' );
+	wp_enqueue_script( 'slider-basic-js' );
 }
 add_action( 'wp_enqueue_scripts', 'blank_styles' );
+
+//Khởi tạo function cho shortcode slider
+function create_shortcode_slider ( $post_type, $post_status = 'publish' ) {?>
+	<div class="container-fluid">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol id="carousel-indicators" class="carousel-indicators">
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div id="carousel-inner" class="carousel-inner" role="listbox">
+
+				<?php
+				$query = new WP_Query ( array (
+					'post_type' => $post_type,
+					'post_status' => $post_status,
+				) );
+
+				if ($query->have_posts ()) :
+					while ( $query->have_posts () ) :
+						$query->the_post ();
+				?>
+
+					<div class="item <?php if ($query->current_post == 0) { echo 'active';} ?>">
+						<?php
+						the_post_thumbnail('', array('class' => 'img-slider'));
+						?>
+					</div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left fa fa-arrow-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right fa fa-arrow-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<?php
+}
+
+//Tạo shortcode tên là [test_shortcode] và sẽ thực thi code từ function create_shortcode
+add_shortcode( 'slider_shortcode', 'create_shortcode_slider' );
 ?>

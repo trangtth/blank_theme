@@ -212,7 +212,7 @@ header {
 	position: absolute;
 	top: 16px;
 	left: 0;
-	padding: 0px;
+	padding: 0px 0px 0px 15px;
 }
 
 /*=========== comment canvas menu ============= */
@@ -263,7 +263,7 @@ header {
 }
 
 .navopen .btnavtive .icon-toggle-nav {
-	width: 20px;
+	width: 35px;
 	content: url("../images/layout/close_collapse_icon.png");
 }
 
@@ -286,7 +286,7 @@ header {
 }
 
 .content-canvas {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 /*=============== transition menu ================= */
@@ -489,7 +489,7 @@ footer {
 	position: fixed;
 	bottom: 80px;
 	right: 20px;
-	background: transparent url("../images/totop.png") center center no-repeat;
+	background: transparent url("../images/layout/totop.png") center center no-repeat;
 	z-index: 3;
 	cursor: pointer;
 	content: "&#65514;";
@@ -520,43 +520,10 @@ footer {
 
 @media all and (max-width: 320px) {
 	/* Header */
-	.toggleNav{
-		line-height: 50px;
-
-		/* Fix icon toggle menu */
-		position: relative;
-	}
-
-	.toggleNav .icon-toggle-nav {
-		position: absolute;
-		left: 0;
-		padding: 0px;
-	}
-
 	.main-nav .logo-brand {
 		min-height: 50px;
 		line-height: 50px;
 		padding: 5px 0px 5px 35px;
-	}
-
-	.main-nav .top-nav{
-		line-height: 50px;
-	}
-
-	.top-nav {
-		height: 90%;
-		overflow: scroll;
-		overflow-x: hidden;
-	}
-
-	.content-menu {
-		overflow: hidden;
-		height: 100%;
-	}
-
-	::-webkit-scrollbar {
-		width: 0px;
-		background: transparent;
 	}
 
 	/* Footer */
@@ -567,43 +534,10 @@ footer {
 
 @media all and (min-width: 320px) and (max-width: 599px) {
 	/* Header */
-	.toggleNav{
-		line-height: 50px;
-
-		/* Fix icon toggle menu */
-		position: relative;
-	}
-
-	.toggleNav .icon-toggle-nav {
-		position: absolute;
-		left: 0;
-		padding: 0px;
-	}
-
 	.main-nav .logo-brand {
 		min-height: 50px;
 		line-height: 50px;
 		padding: 5px 0px 5px 35px;
-	}
-
-	.main-nav .top-nav{
-		line-height: 50px;
-	}
-
-	.top-nav {
-		height: 90%;
-		overflow: scroll;
-		overflow-x: hidden;
-	}
-
-	.content-menu {
-		overflow: hidden;
-		height: 100%;
-	}
-
-	::-webkit-scrollbar {
-		width: 0px;
-		background: transparent;
 	}
 
 	/* Footer */
@@ -613,31 +547,25 @@ footer {
 }
 
 @media all and (min-width: 599px) and (max-width: 1023px) {
-	.toggleNav{
-		line-height: 50px;
-
-		/* Fix icon toggle menu */
-		position: relative;
-	}
-
-	.toggleNav .icon-toggle-nav {
-		position: absolute;
-		left: 0;
-		padding: 0px 0px 0px 15px;
-	}
-
-	.navopen .btnavtive .icon-toggle-nav {
-		width: 35px;
-	}
-
 	.main-nav .logo-brand {
 		min-height: 50px;
 		line-height: 50px;
 		padding: 5px 0px 5px 35px;
 	}
+}
 
-	.main-nav .top-nav{
+@media all and (max-width: 768px) {
+	.main-nav .logo-brand img {
+		width: 80%;
+	}
+}
+
+@media all and (max-width: 1023px) {
+	.toggleNav {
 		line-height: 50px;
+
+		/* Fix icon toggle menu */
+		position: relative;
 	}
 
 	.top-nav {
@@ -654,5 +582,9 @@ footer {
 	::-webkit-scrollbar {
 		width: 0px;
 		background: transparent;
+	}
+
+	.main-nav .top-nav {
+		line-height: 50px;
 	}
 }
