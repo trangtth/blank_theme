@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script>document.documentElement.className = 'js';</script>
+    <link rel="stylesheet" href="css/custom.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+    <!--<script language="JavaScript" src="js/jquery-1.12.3.min.js"></script>-->
+    <!--<script src="js/jquery.parallax.js"></script>-->
 </head>
 <body>
+<div class="site_wrap wrap">
+    <div class="parallax-layer">
+        <div class="parallax-window">
 
+            <div class="btn-view">
+                <a href="#">
+                    <span>  parallax</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        // Declare parallax on layers
+        jQuery('.parallax-window').parallax({
+        //  property move img for mouse
+            mouseport: jQuery(".parallax-layer"),
+        //  property fixted for width not height
+        // yparallax: false,
+        //  property fixted for heiht not width
+         xparallax: false,
+
+        });
+    });
+</script>
 </html>

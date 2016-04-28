@@ -1,0 +1,8 @@
+.section {
+    width: 540px;
+    height: 500px;
+    background: url(../img/esthe_2.png) no-repeat #000; }
+.section .inner {
+    width: 540px;
+    height: 500px;
+    background: url(../img/esthe_1.png) no-repeat; }

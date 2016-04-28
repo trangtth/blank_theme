@@ -3,9 +3,33 @@
 }
 
 /*================= COMMON CSS =============== */
+.no-padding-top {
+	padding-top: 0px;
+}
+
+.no-padding-right {
+	padding-right: 0px;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0px;
+}
+
+.no-padding-left {
+	padding-left: 0px;
+}
+
+.no-padding {
+	padding: 0px;
+}
+
 * {
 	padding: 0;
 	margin: 0;
+}
+
+.clear-both {
+	clear: both;
 }
 
 body {
@@ -89,7 +113,13 @@ header {
 	top: 0;
 	left: 0;
 	padding: 0px 20px;
-	background: rgba(10, 187, 181, 0.54);
+	/*fix gradient color
+		case 1:
+		http://www.colorzilla.com/gradient-editor/
+		case 2:
+		http://www.w3schools.com/css/css3_gradients.asp
+	*/
+	background: linear-gradient(to right,rgba(10, 187, 181, 0.54),rgba(10, 187, 181, 0.54));
 	transition: background 0.3s ease-in-out;
 	z-index: 100;
 }

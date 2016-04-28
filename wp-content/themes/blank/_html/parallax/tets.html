@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <!--==========CSS=============-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!--===================JS==============-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            /*user for mobile**/
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+                /*remuve properties hidden of class ios-notice**/
+                $('#ios-notice').removeClass('hidden');
+                $('.parallax-container').height( $(window).height() * 0.5 | 0 );
+            } else {/*user for pc**/
+                $(window).resize(function(){
+                /*chenge speed mover height 0.9 = ? custom setting**/
+                    var parallaxHeight = Math.max($(window).height() * 0.9, 200) | 0;
+                    $('.parallax-container').height(parallaxHeight);
+                }).trigger('resize');
+            }
+        });
+    </script>
+    <script src="./js/parallax.min.js"></script>
 </head>
 <body>
+<section>
+    <div class="container">
+        <div id="ios-notice" class="alert alert-info hidden"><p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds.  Please visit this page on a desktop browser to see its full effect.</p></div>
+        <h1>Simple Parallax Scrolling <small>parallax.js</small></h1>
+    </div>
+    <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="images/parallax11.jpg" data-natural-width="1400" data-natural-height="900"></div>
+    <section>
+        <div class="container">
+            <h2 id="installation">kiemtra</h2>
 
+            <p>Download and include <code>parallax.min.js</code> in your document after including jQuery.</p>
+
+            <h2 id="useage">Useage</h2>
+
+            <h3 id="viadataattributes">Via data attributes</h3>
+
+            <h3 id="viajavascript">Via JavaScript</h3>
+
+            <p>To call the parallax plugin manually, simply select your target element with jQuery and do the following:</p>
+
+            <h3 id="underthehood">Under The Hood</h3>
+
+            <p>What parallax.js will do is create a fixed-position element for each parallax image at the start of the document&#8217;s body. This mirror element will sit behind the other elements and match the position and dimensions of its target object.</p>
+
+            <p>Due to the nature of this implementation, you must ensure that these parallax objects and any layers below them are transparent so that you can see the parallax effect underneath. Also, if there is no other content in this element, you will need to ensure that it has some fixed dimensions otherwise you won&#8217;t see anything.</p>
+        </div>
+    </section>
+    <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="images/parallax11.jpg" data-natural-width="1400" data-natural-height="900"></div>
+</section>
 </body>
 </html>

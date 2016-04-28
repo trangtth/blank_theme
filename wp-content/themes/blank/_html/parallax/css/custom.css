@@ -1,0 +1,44 @@
+/*parallex stype 2*/
+.parallax-layer {
+    background: rgb(47, 49, 52);
+    margin: 1.5em 0px;
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+}
+.parallax-window{
+    background-image: url(../images/parallax10.jpg);
+    position: absolute;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-top: 200px;
+    width: 100%;
+}
+.btn-view{
+    position: relative;
+    color: White;
+    z-index: 100;
+    cursor: pointer;
+    height: 50px;
+    width: 225px;
+    margin: 0 auto;
+    background: #0ABBB5;
+    border-radius: 3px;
+    line-height: 3.5;
+    cursor: pointer;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    box-sizing: border-box;
+}
+ /*parallex stype 1*/
+.parallax-container {
+    height: 500px;
+    width: 100%;
+}
